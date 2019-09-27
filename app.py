@@ -71,6 +71,3 @@ def info():
 
     return render_template('info.html', title="lk", logic=logic, form=form, delform=delform)
 
-
-if __name__ == '__main__':
-    app.run()
