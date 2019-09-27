@@ -1,0 +1,79 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+   {{ title }}
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <h1>Логика приложения</h1>
+    <form method="post" action="">
+          <div class="form-group">
+            <label for="exampleInputPassword1">{{ form.id_logic.label }} </label>
+            {{ form.id_logic(size=20,class_="form-control") }}
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1"> {{ form.id_parents.label }}</label>
+            {{ form.id_parents(size=20,class_="form-control") }}
+          </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">{{ form.response.label }} </label>
+             {{ form.response(size=200,class_="form-control") }}
+          </div>
+         <div class="form-group">
+            <label for="exampleInputPassword1">{{ form.template.label }}</label>
+             {{ form.template(size=200,class_="form-control") }}
+          </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">{{ form.command.label }}</label>
+             {{ form.command(size=200,class_="form-control") }}
+          </div>
+           <div class="form-group">
+            <label for="exampleInputPassword1">{{ form.button.label }}</label>
+             {{ form.button(size=200,class_="form-control") }}
+          </div>
+         {{ form.submit(class_="btn btn-primary") }}
+    </form>
+    <h1>Skill</h1>
+     <table class="table table-sm">
+     <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Skill</th>
+            <th scope="col">Parents</th>
+            <th scope="col">response</th>
+            <th scope="col">template</th>
+            <th scope="col">button</th>
+            <th scope="col">command</th>
+            <th scope="col">X</th>
+        </tr>
+     </thead>
+         {% for log in logic %}
+             <tr>
+                  <th scope="row">{{ loop.index }}</th>
+                  <td>{{ log.id_logic }}</td>
+                  <td>{{ log.id_parents }}</td>
+                  <td>{{ log.response }}</td>
+                  <td>{{ log.template }}</td>
+                  <td>{{ log.button }}</td>
+                  <td>{{ log.command }}</td>
+                  <td>
+                       <form method="post" action="">
+                           {{ delform.id_del(value=log.id_logic) }}
+                           {{ delform.deletSub(class_="btn btn-primary") }}
+                       </form>
+                  </td>
+             </tr>
+         {% endfor %}
+     </table>
+
+
+
+
+
+
+</div>
+{% endblock %}
+
