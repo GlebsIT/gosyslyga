@@ -69,7 +69,7 @@ def info():
     rekursia(logic,'',0, rekurs_element)
     logic = sorted(logic,key=lambda logic: rekurs_element[logic.id_logic])
 
-    return render_template('info.html', title="Личный кабинет", logic=logic, form=form, delform=delform)
+    return render_template('info.html', title="lk", logic=logic, form=form, delform=delform)
 
 
 if __name__ == '__main__':
