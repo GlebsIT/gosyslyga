@@ -28,7 +28,6 @@ class Logic(db.Model):
         return '<Response {}>'.format(self.response)
 
 
-# from models import Logic
 
 @app.route('/')
 def main():
