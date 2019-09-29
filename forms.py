@@ -10,7 +10,7 @@ class FormAddSkill(Form):
     template = StringField('template')
     button = StringField('button')
     command = StringField('command')
-    submit = SubmitField('ok')
+    submit = SubmitField('добавить')
 
 
 class FormDeleteSkill(Form):

@@ -1,9 +1,286 @@
-<html>
-    <head>
-        <title>{{ title }} - Microblog</title>
-    </head>
-    <body>
-        <h1>Hello, {{ user.username }}!</h1>
-        <h1>Sign In</h1>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SKYNET</title>
+	<!-- Normalize -->
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}" />
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+	<!-- Owl -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.css') }}" />
+	<!-- Animate.css -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/animate.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/form.css') }}" />
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/font-awesome-4.1.0/css/font-awesome.min.css') }}" />
+	<!-- Elegant Icons -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='fonts/eleganticons/et-icons.css') }}" />
+	<!-- Main style -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/cardio.css') }}" />
+</head>
+
+<body>
+       <div class="preloader">
+		<img src="{{ url_for('static', filename='img/loader.gif') }}" alt="Preloader image">
+	</div>
+	<nav class="navbar">
+		<div class="container">
+		<a class="navbar-brand logo_h" href="index.html"><img src="{{ url_for('static', filename='img1/logo.png') }}" width="100px" alt="" ></a>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right main-nav">
+					<li><a href="#intro">Информация</a></li>
+					<li><a href="#services">ГосУслуги</a></li>
+					<li><a href="#team">Команда</a></li>
+					<li><a id="btn_click" href="user_account.html" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Войти</a></li>
+					<li><a id="btn_click" href="user_account.html" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Зарегистрироваться</a></li>
+					<script>
+						$('#btn_click').on('click', function() { window.location = 'user_account.html'; });
+					</script>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<header id="intro">
+		<div class="container">
+			<div class="table">
+				<div class="header-text">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h1 class="light white">SKYNET</h1>
+							<h2 class="white typed">Да придет спаситель</h2>
+							<span class="typed-cursor">|</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section id="services" class="section section-padded">
+		<div class="container">
+			<div class="row text-center title">
+				<h2>ГосУслуги</h2>
+				<h4 class="light muted">Сделай проще. Используй голосового помощника.</h4>
+			</div>
+			<div class="row services">
+				<div class="col-md-4">
+					<div class="service" onClick="location.href='/'">
+						<div class="icon-holder">
+							<img src="{{ url_for('static', filename='img1/social_protection.png') }}" alt="" class="icon">
+						</div>
+						<h4 class="heading">Социальная помощь</h4>
+						<p class="description">Постановка на учет, оплата, запись на прием</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service" onClick="location.href='/'">
+						<div class="icon-holder">
+							<img src="{{ url_for('static', filename='img1/medicine.png') }}" alt="" class="icon">
+						</div>
+						<h4 class="heading">Медицина</h4>
+						<p class="description">Запись на прием, дежурные аптеки, запись рецептов</p>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="service" onClick="location.href='/'">
+						<div class="icon-holder">
+							<img src="{{ url_for('static', filename='img1/housing_office.png') }}" alt="" class="icon">
+						</div>
+						<h4 class="heading">ЖКХ</h4>
+						<p class="description">Оплата коммунальных услуг, ввод показаний счетчиков</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="cut cut-bottom"></div>
+	</section>
+	<section id="team" class="section gray-bg">
+		<div class="container">
+			<div class="row title text-center">
+				<h2 class="margin-top">Команда</h2>
+				<h4 class="light muted">Делаем вашу жизнь лучше</h4>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="team text-center">
+					<div class="cover" style="background:url({{ url_for('static', filename='img1/gleb_fon.jpg') }}); background-size:cover;">
+							<div class="overlay text-center">
+								<h3 class="white">1С, Python, js</h3>
+								<h5 class="light light-white">"Если что на php всё поднимем"</h5>
+							</div>
+                    </div>
+						<img src="{{ url_for('static', filename='img1/gleb.jpg') }}" alt="Team Image" class="avatar">
+						<div class="title">
+							<h4>Березовский Глеб</h4>
+							<h5 class="muted regular">Капитан разработчик</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="team text-center">
+						<div class="cover" style="background:url({{ url_for('static', filename='img1/dima_fon.jpg') }}); background-size:cover;">
+							<div class="overlay text-center">
+								<h3 class="white">1С, js</h3>
+								<h5 class="light light-white">Ведущий разработчик и просто Ведущий!</h5>
+							</div>
+						</div>
+						<img src="{{ url_for('static', filename='img1/dima.jpg') }}" alt="Team Image" class="avatar">
+						<div class="title">
+							<h4>Калашников Дмитрий</h4>
+							<h5 class="muted regular">Ведущий разработчик</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="team text-center">
+						<div class="cover" style="background:url({{ url_for('static', filename='img1/ira_fon.jpg') }}); background-size:cover;">
+							<div class="overlay text-center">
+								<h3 class="white">Python, joomla</h3>
+								<h5 class="light light-white">Няня Алисы</h5>
+							</div>
+						</div>
+						<img src="{{ url_for('static', filename='img1/ira.jpg') }}" alt="Team Image" class="avatar">
+						<div class="title">
+							<h4>Тюжина Ирина</h4>
+							<h5 class="muted regular">Разработчик</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="team text-center">
+						<div class="cover" style="background:url({{ url_for('static', filename='img1/natasha_fon.jpg') }}); background-size:cover;">
+							<div class="overlay text-center">
+								<h3 class="white">Photoshop</h3>
+								<h5 class="light light-white">Душа компании. Красотка!</h5>
+							</div>
+						</div>
+						<img src="{{ url_for('static', filename='img1/natasha.jpg') }}" alt="Team Image" class="avatar">
+						<div class="title">
+							<h4>Бабушкина Наталья</h4>
+							<h5 class="muted regular">Дизайнер</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="team text-center">
+						<div class="cover" style="background:url({{ url_for('static', filename='img1/lena_fon.jpg') }}); background-size:cover;">
+							<div class="overlay text-center">
+								<h3 class="white">Бизнес модели</h3>
+								<h5 class="light light-white">Человек с неиссякаемой энергией!</h5>
+							</div>
+						</div>
+						<img src="{{ url_for('static', filename='img1/lena.jpg') }}" alt="Team Image" class="avatar">
+						<div class="title">
+							<h4>Трошина Елена</h4>
+							<h5 class="muted regular">Бизнес аналитик</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<div class="mobile-nav">
+		<ul>
+		</ul>
+		<a href="#" class="close-link"><i class="arrow_up"></i></a>
+	</div>
+
+    <div id="call-form-auto" class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form flex-sb flex-w">
+                    <span class="login100-form-title">
+                        Авторизация
+                    </span>
+
+                    <div class="wrap-input100 validate-input" data-validate="Заполните имя" data-validate="Имя">
+                        <input class="input100" type="text" name="username" placeholder="Логин">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                   <div class="wrap-input100 input-telephone">
+                        <input class="input100" type="text" name="username" placeholder="Пароль">
+                        <span class="focus-input100"></span>
+                    </div>
+
+
+                    <div class="container-login100-form-btn">
+                        <button id="auto-button" class="login100-form-btn">
+                           авторизоваться
+                        </button>
+                        <button id="auto-user" class="login100-form-btn">
+                           Личный кабинет аналитика
+                        </button>
+                        <button id="auto-analitik" class="login100-form-btn">
+                           Личный кабинет пользователя
+                        </button>
+                         <button id="exit-button" class="login100-form-btn">
+                           выйти
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="call-form-reqistr" class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <form class="login100-form validate-form flex-sb flex-w">
+                    <span class="login100-form-title">
+                        Форма регистрации
+                    </span>
+
+                    <div class="wrap-input100 validate-input" data-validate="Заполните имя" data-validate="Логин">
+                        <input class="input100" type="text" name="login" placeholder="Логин">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Заполните имя" data-validate="Логин">
+                        <input class="input100" type="text" name="password" placeholder="Пароль">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                   <div class="wrap-input100 input-telephone">
+                        <input class="input100" type="text" name="name" placeholder="Пароль">
+                        <span class="focus-input100"></span>
+                    </div>
+
+                    <div class="wrap-input100 input-telephone">
+                        <input class="input100" type="text" name="name" placeholder="Имя">
+                        <span class="focus-input100"></span>
+                    </div>
+
+
+                    <div class="container-login100-form-btn">
+                        <button id="reg-button" class="login100-form-btn">
+                           Регистрация
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+	<!-- Scripts -->
+       <script src="{{ url_for('static', filename='js/jquery-1.11.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/typewriter.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.onepagenav.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+</body>
+
 </html>

@@ -39,11 +39,11 @@ def rekursia(logic,id_parents,iterator,rekurs_element):
     for val in logic:
         if val.id_parents == str(id_parents) and  rekurs_element.get(val.id_logic,0) == 0:
             #iterator += 1
-            rekurs_element[val.id_logic] = len(rekurs_element);
+            rekurs_element[val.id_logic] = len(rekurs_element)
             rekursia(logic,val.id_logic,len(rekurs_element),rekurs_element)
 
 
-@app.route('/info', methods=['GET', 'POST'])
+@app.route('/analitik', methods=['GET', 'POST'])
 def info():
     form = FormAddSkill()
     delform = FormDeleteSkill()
@@ -68,6 +68,8 @@ def info():
     rekurs_element = {}
     rekursia(logic,'',0, rekurs_element)
     logic = sorted(logic,key=lambda logic: rekurs_element[logic.id_logic])
-
-    return render_template('info.html', title="lk", logic=logic, form=form, delform=delform)
+    head_id = ''
+    if len(logic) > 0:
+        head_id = str(logic[0].id_logic)
+    return render_template('info.html', title="lk", logic=logic, form=form, delform=delform, head = head_id)
 
