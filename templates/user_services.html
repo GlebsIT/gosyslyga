@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+		a {cursor:pointer;}
+	</style>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SKYNET</title>
+	<!-- Normalize -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+	<!-- Bootstrap -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<!-- Owl -->
+	<link rel="stylesheet" type="text/css" href="css/owl.css">
+	<!-- Animate.css -->
+	<link rel="stylesheet" type="text/css" href="css/animate.css">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.1.0/css/font-awesome.min.css">
+	<!-- Elegant Icons -->
+	<link rel="stylesheet" type="text/css" href="fonts/eleganticons/et-icons.css">
+	<!-- Main style -->
+	<link rel="stylesheet" type="text/css" href="css/cardio.css">
+</head>
+
+<body>
+	<style>
+		.border {
+			list-style: none;
+			padding: 0;
+		}
+		.border li {
+			font-family: "Trebuchet MS", "Lucida Sans";
+			padding: 7px 20px;
+			margin-bottom: 10px;
+			border-radius: 5px;
+			border-left: 10px solid #f05d22; 
+			box-shadow: 2px -2px 5px 0 rgba(0,0,0,.1),
+			-2px -2px 5px 0 rgba(0,0,0,.1),
+			2px 2px 5px 0 rgba(0,0,0,.1),
+			-2px 2px 5px 0 rgba(0,0,0,.1);
+			font-size: 20px;
+			letter-spacing: 2px;
+			transition: 0.3s all linear;
+		}
+		.border li:nth-child(2){border-color: #8bc63e;}
+		.border li:nth-child(3){border-color: #fcba30;}
+		.border li:nth-child(4){border-color: #1ccfc9;}
+		.border li:nth-child(5){border-color: #493224;}
+		.border li:hover {border-left: 10px solid transparent;}
+		.border li:nth-child(1):hover {border-right: 10px solid #f05d22;}
+		.border li:nth-child(2):hover {border-right: 10px solid #8bc63e;}
+		.border li:nth-child(3):hover {border-right: 10px solid #fcba30;}
+		.border li:nth-child(4):hover {border-right: 10px solid #1ccfc9;}
+		.border li:nth-child(5):hover {border-right: 10px solid #493224;}			
+	</style>
+
+	<div class="preloader">
+		<img src="img/loader.gif" alt="Preloader image">
+	</div>
+	<nav class="navbar">
+		<div class="container">
+		<a class="navbar-brand logo_h" href="index.html"><img src="img1/logo.png" width="100px" alt="" ></a>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-right main-nav">
+					<li><a href="#intro">Личный кабинет</a></li>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+		<!-- /.container-fluid -->
+	</nav>
+	<header id="intro">
+		<div class="container">
+			<div class="table">
+				<div class="header-text">
+					<div class="row">
+						<div class="col-md-12 text-center">
+							<h1 class="light white">SKYNET</h1>
+							<h2 class="white typed">Да придет спаситель</h2>
+							<span class="typed-cursor">|</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section id="services" class="section section-padded">
+		<div class="container">
+			<div class="row text-center title">
+				<h2>Медицина</h2>
+				<h4 class="light muted">Оказанные услуги</h4>
+			</div>
+			<div class="row services">
+				<div class = "border">
+					<li><a><span>Выписка рецептов</span></a>
+						<ul>
+							<li><a><span>29.09.2019</span></a>
+						<ul>
+							<li><a><span>Терапевт</span></a>
+								<ul>
+								<li><a><span>Андипал</span></a>
+								<ul>
+									<li>2 таблетки 1 раз в день. Цена 57 руб.</li>
+								</ul>
+								</li>
+								<li><a><span>Эргоферон</span></a>
+									<ul>
+										<li>1 таблетка 3 раза в день. Цена 400 руб.</li>
+									</ul>
+								</li>
+								<li><a><span>Общая цена 457 руб.</span></a>
+								</li>
+								</ul>
+							</li>
+						</ul>
+
+						</ul>
+					</li>
+					<li><a><span>Запись на прием к врачу</span></a>
+					</li>
+					<li><a><span>Донор крови</span></a>
+					</li>
+				</div>
+			</div>
+			<script>
+				$(document).ready(function(){
+					$("ul").hide();
+					$("a span").click(function(){
+						$(this).parent().next().slideToggle();
+					});
+				}); 
+			</script>
+		</div>
+		<div class="cut cut-bottom"></div>
+	</section>
+	<section id="team" class="section gray-bg">
+		<div class="container">
+			<div class="row title text-center">
+				<h2 class="margin-top">Команда</h2>
+				<h4 class="light muted">Делаем вашу жизнь лучше</h4>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<div class="team text-center">
+					<div class="cover" style="background:url('img1/gleb_fon.jpg'); background-size:cover;">
+							<div class="overlay text-center">
+								<h3 class="white">1С, Python, js</h3>
+								<h5 class="light light-white">"Если что на php всё поднимем"</h5>
+							</div>
+						</div>
+						<img src="img1/gleb.jpg" alt="Team Image" class="avatar">
+						<div class="title">
+							<h4>Березовский Глеб</h4>
+							<h5 class="muted regular">Капитан разработчик</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="team text-center">
+						<div class="cover" style="background:url('img1/dima_fon.jpg'); background-size:cover;">
+							<div class="overlay text-center">
+								<h3 class="white">1С, js</h3>
+								<h5 class="light light-white">Ведущий разработчик и просто Ведущий!</h5>
+							</div>
+						</div>
+						<img src="img1/dima.jpg" alt="Team Image" class="avatar">
+						<div class="title">
+							<h4>Калашников Дмитрий</h4>
+							<h5 class="muted regular">Ведущий разработчик</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="team text-center">
+						<div class="cover" style="background:url('img1/ira_fon.jpg'); background-size:cover;">
+							<div class="overlay text-center">
+								<h3 class="white">Python, joomla</h3>
+								<h5 class="light light-white">Няня Алисы</h5>
+							</div>
+						</div>
+						<img src="img1/ira.jpg" alt="Team Image" class="avatar">
+						<div class="title">
+							<h4>Тюжина Ирина</h4>
+							<h5 class="muted regular">Разработчик</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="team text-center">
+						<div class="cover" style="background:url('img1/natasha_fon.jpg'); background-size:cover;">
+							<div class="overlay text-center">
+								<h3 class="white">Photoshop</h3>
+								<h5 class="light light-white">Душа компании. Красотка!</h5>
+							</div>
+						</div>
+						<img src="img1/natasha.jpg" alt="Team Image" class="avatar">
+						<div class="title">
+							<h4>Бабушкина Наталья</h4>
+							<h5 class="muted regular">Дизайнер</h5>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="team text-center">
+						<div class="cover" style="background:url('img1/lena_fon.jpg'); background-size:cover;">
+							<div class="overlay text-center">
+								<h3 class="white">Бизнес модели</h3>
+								<h5 class="light light-white">Человек с неиссякаемой энергией!</h5>
+							</div>
+						</div>
+						<img src="img1/lena.jpg" alt="Team Image" class="avatar">
+						<div class="title">
+							<h4>Трошина Елена</h4>
+							<h5 class="muted regular">Бизнес аналитик</h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<div class="mobile-nav">
+		<ul>
+		</ul>
+		<a href="#" class="close-link"><i class="arrow_up"></i></a>
+	</div>
+	<!-- Scripts -->
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/typewriter.js"></script>
+	<script src="js/jquery.onepagenav.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
