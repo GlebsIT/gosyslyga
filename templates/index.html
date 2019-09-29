@@ -37,11 +37,9 @@
 					<li><a href="#intro">Информация</a></li>
 					<li><a href="#services">ГосУслуги</a></li>
 					<li><a href="#team">Команда</a></li>
-					<li><a id="btn_click" href="user_account.html" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Войти</a></li>
-					<li><a id="btn_click" href="user_account.html" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Зарегистрироваться</a></li>
-					<script>
-						$('#btn_click').on('click', function() { window.location = 'user_account.html'; });
-					</script>
+					<li><a id="btn-auto" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Войти</a></li>
+					<li><a id="btn-reg" href="#" data-toggle="modal" data-target="#modal1" class="btn btn-blue">Зарегистрироваться</a></li>
+
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
@@ -217,14 +215,16 @@
                            авторизоваться
                         </button>
                         <button id="auto-user" class="login100-form-btn">
-                           Личный кабинет аналитика
-                        </button>
-                        <button id="auto-analitik" class="login100-form-btn">
                            Личный кабинет пользователя
                         </button>
-                         <button id="exit-button" class="login100-form-btn">
-                           выйти
+                        <button id="auto-analitik" class="login100-form-btn">
+                           Личный кабинет аналитика
                         </button>
+
+                        <button id="exit-button" class="login100-form-btn">
+                           закрыть форму
+                        </button>
+
                     </div>
 
                 </form>
@@ -281,6 +281,35 @@
     <script src="{{ url_for('static', filename='js/jquery.onepagenav.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script src="{{ url_for('static', filename='js/form.js') }}"></script>
+    <script>
+        console.log("test");
+            $("#auto-user").click(function() {
+
+        window.location.href = window.location.href + "user";
+    });
+
+     $("#auto-analitik").click(function() {
+        console.log();
+        window.location.href = window.location.href + "analitik";
+    });
+
+      $("#auto-analitik").click(function() {
+        console.log();
+        window.location.href = window.location.href + "analitik";
+    });
+
+      $("#exit-button").click(function() {
+        console.log();
+        window.location.href = window.location.href;
+    });
+
+
+
+     $("#btn-auto").click(function() {
+         console.log("eeee");
+         $("#call-form-auto").show();
+    });
+    </script>
 </body>
 
 </html>

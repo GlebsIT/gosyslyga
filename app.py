@@ -42,6 +42,9 @@ def rekursia(logic,id_parents,iterator,rekurs_element):
             rekurs_element[val.id_logic] = len(rekurs_element)
             rekursia(logic,val.id_logic,len(rekurs_element),rekurs_element)
 
+@app.route('/user', methods=['GET', 'POST'])
+def user():
+    return render_template('user_account.html')
 
 @app.route('/analitik', methods=['GET', 'POST'])
 def info():

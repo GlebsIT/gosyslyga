@@ -9,6 +9,18 @@
         window.location.href = window.location.href + "analitik";
     });
 
+     $("#auto-analitik").click(function() {
+        console.log();
+        window.location.href = window.location.href + "user";
+    });
+
+
+     $("#btn-auto").click(function() {
+         $("#call-form-auto").show();
+    });
+
+
+
 
 
 
