@@ -68,7 +68,7 @@
 
 
     <h1>Личный кабинет аналитика</h1>
-
+    <a href="#" id="add-step-vision">Добавить этап</a>
     <div id="form-step">
         <form method="post" action="">
               <div class="form-group">
@@ -171,6 +171,11 @@
 				$("a span").click(function(){
 					$(this).parent().next().slideToggle();
 				});
+
+				 $("#add-step-vision").click(function() {
+                     $("#form-step").toggle();
+                 }
+
 
 				  $(".teg-element").click(function() {
                    console.log($(this).data('teg'));
